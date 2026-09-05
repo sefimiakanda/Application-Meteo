@@ -170,28 +170,35 @@ class _WeatherDataView extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          Wrap(
+            spacing: 10,
+            runSpacing: 10,
             children: [
               _InfoPill(label: 'Ressentie', value: WeatherUtils.formatTemp(weather.feelsLike)),
               _InfoPill(label: 'Min', value: WeatherUtils.formatTemp(weather.tempMin)),
               _InfoPill(label: 'Max', value: WeatherUtils.formatTemp(weather.tempMax)),
             ],
           ),
-          const SizedBox(height: 30),
-          GridView.count(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            crossAxisCount: 2,
-            mainAxisSpacing: 14,
-            crossAxisSpacing: 14,
-            childAspectRatio: 1.9,
-            children: [
-              WeatherDetailCard(icon: Icons.water_drop_rounded, label: 'Humidité', value: '${weather.humidity} %', iconColor: Colors.lightBlueAccent),
-              WeatherDetailCard(icon: Icons.air_rounded, label: 'Vent', value: '${weather.windSpeed.toStringAsFixed(1)} m/s • $windDirection', iconColor: Colors.cyan),
-              WeatherDetailCard(icon: Icons.speed_rounded, label: 'Pression', value: '${weather.pressure} hPa', iconColor: Colors.amber),
-              WeatherDetailCard(icon: Icons.visibility_rounded, label: 'Visibilité', value: '$visibilityKm km', iconColor: Colors.deepPurpleAccent),
-            ],
+          const SizedBox(height: 28),
+          LayoutBuilder(
+            builder: (context, constraints) {
+              final cardWidth = (constraints.maxWidth - 14) / 2;
+
+              return GridView.count(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                crossAxisCount: 2,
+                mainAxisSpacing: 14,
+                crossAxisSpacing: 14,
+                childAspectRatio: (cardWidth / 110).clamp(1.3, 1.8),
+                children: [
+                  WeatherDetailCard(icon: Icons.water_drop_rounded, label: 'Humidité', value: '${weather.humidity} %', iconColor: Colors.lightBlueAccent),
+                  WeatherDetailCard(icon: Icons.air_rounded, label: 'Vent', value: '${weather.windSpeed.toStringAsFixed(1)} m/s\n$windDirection', iconColor: Colors.cyan),
+                  WeatherDetailCard(icon: Icons.speed_rounded, label: 'Pression', value: '${weather.pressure} hPa', iconColor: Colors.amber),
+                  WeatherDetailCard(icon: Icons.visibility_rounded, label: 'Visibilité', value: '$visibilityKm km', iconColor: Colors.deepPurpleAccent),
+                ],
+              );
+            },
           ),
           const SizedBox(height: 20),
           Container(
