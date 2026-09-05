@@ -21,9 +21,9 @@ class WeatherDetailCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(14),
         decoration: BoxDecoration(
-          color: Colors.white.withValues(alpha: 0.12),
+          color: const Color(0x1AFFFFFF),
           borderRadius: BorderRadius.circular(18),
-          border: Border.all(color: Colors.white.withValues(alpha: 0.15)),
+          border: Border.all(color: const Color(0x33FFFFFF)),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -40,9 +40,9 @@ class WeatherDetailCard extends StatelessWidget {
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
-                      color: Colors.white70,
+                      color: Color(0xFFE2E8F0),
                       fontSize: 13,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 ),
@@ -58,7 +58,7 @@ class WeatherDetailCard extends StatelessWidget {
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 17,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w800,
                   height: 1.2,
                 ),
               ),
@@ -94,9 +94,9 @@ class _WeatherSearchBarState extends State<WeatherSearchBar> {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 12),
           decoration: BoxDecoration(
-            color: Colors.white.withValues(alpha: 0.12),
+            color: const Color(0x1AFFFFFF),
             borderRadius: BorderRadius.circular(18),
-            border: Border.all(color: Colors.white.withValues(alpha: 0.2)),
+            border: Border.all(color: const Color(0x30FFFFFF)),
           ),
           child: Row(
             children: [
@@ -136,8 +136,8 @@ class _WeatherSearchBarState extends State<WeatherSearchBar> {
                     widget.controller.text = suggestion;
                     widget.onSearch();
                   },
-                  backgroundColor: Colors.white.withValues(alpha: 0.12),
-                  labelStyle: const TextStyle(color: Colors.white),
+                  backgroundColor: const Color(0x22FFFFFF),
+                  labelStyle: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
                   side: BorderSide.none,
                 );
               }).toList(),

@@ -142,8 +142,9 @@ class _WeatherDataView extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: 0.09),
+              color: const Color(0x14FFFFFF),
               borderRadius: BorderRadius.circular(26),
+              border: Border.all(color: const Color(0x22FFFFFF)),
             ),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -158,11 +159,11 @@ class _WeatherDataView extends StatelessWidget {
                   children: [
                     Text(
                       WeatherUtils.formatTemp(weather.temperature),
-                      style: const TextStyle(color: Colors.white, fontSize: 42, fontWeight: FontWeight.bold),
+                      style: const TextStyle(color: Colors.white, fontSize: 42, fontWeight: FontWeight.w800),
                     ),
                     Text(
                       WeatherUtils.capitalize(weather.description),
-                      style: const TextStyle(color: Colors.white70, fontSize: 16),
+                      style: const TextStyle(color: Color(0xFFF1F5F9), fontSize: 16, fontWeight: FontWeight.w600),
                     ),
                   ],
                 ),
@@ -204,8 +205,9 @@ class _WeatherDataView extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: 0.08),
+              color: const Color(0x12FFFFFF),
               borderRadius: BorderRadius.circular(22),
+              border: Border.all(color: const Color(0x22FFFFFF)),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
