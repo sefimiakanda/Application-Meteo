@@ -1,4 +1,4 @@
-# Activité 4 - Application météo avec OpenWeather
+# Activité 4 Formation Dclic - Application météo avec OpenWeather
 
 Application Flutter qui consulte l’API OpenWeather pour afficher la météo d’une ville saisie par l’utilisateur.
 
@@ -56,7 +56,7 @@ Cette application utilise la clé API suivante :
 1. Clonez le projet :
 
 ```bash
-git clone <url-du-repo>
+git clone https://github.com/sefimiakanda/Application-Meteo.git
 cd activite4
 ```
 
@@ -115,4 +115,4 @@ Pour un projet de démonstration, cette version est conçue pour fonctionner rap
 
 ## Auteur
 
-Projet réalisé dans le cadre de l’activité sur les API météo Flutter.
+Fidèle Miakanda.
